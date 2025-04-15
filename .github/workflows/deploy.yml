@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   deploy:   
-    everonment:
+    environment:
       name:git-hub pages maria clara
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
