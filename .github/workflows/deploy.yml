@@ -1,0 +1,36 @@
+name: deploy do github pages maria clara
+on:
+  push:
+    branches:
+      - main  
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+  #etapas
+
+jobs:
+  deploy:   
+    everonment:
+      name:git-hub pages maria clara
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+     - name: clonagem
+       uses: actions/checkout@v4
+
+     - name: configurações pagina 
+       uses: actions/configure-pages@v5
+
+     - name: arquivos projetos
+       uses: actions/upload-pages-artifact@v3
+        with:
+
+          path: '.'
+     - name: deploy final 
+        uses: actions/deploy-pages@v4
+
+
+     
